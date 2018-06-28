@@ -1,5 +1,5 @@
 from django.urls import path
-from api_views import NewPricesView
+from .api_views import NewPricesView
 
 
 urlpatterns = [
