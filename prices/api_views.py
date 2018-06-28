@@ -39,7 +39,7 @@ class NewPricesView(APIView):
             np.save()
 
     def post(self, request, format=None):
-        serializer = self.get_serializer(data=request.data)
+        serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         registered = datetime.now().replace(tzinfo=None)
         self.manage_securities_data(json.loads(request.data['securities_data']), registered)
